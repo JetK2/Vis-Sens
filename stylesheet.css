@@ -1,0 +1,38 @@
+html {
+  background-color: black;
+}
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: #ffffff;
+}
+
+.chart-container {
+  position: relative;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.chart-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  border-color: white;
+  padding: 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+#prev {
+  left: -100px;
+}
+
+#next {
+  right: -100px;
+}
