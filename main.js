@@ -76,6 +76,16 @@ function PieChart (pos,posV,neg, negV) {
 
 }
 
-PieChart("do have a book", 92.9, "don't have a book", 7.1)
 
-PieChart("book owning kids enjoy reading", 46.6, "non book owning kids enjoy reading", 14.8)
+var dataSets = [
+    {  pos: "do have a book", posV: 92.9, neg: "don't have a book", negV: 7.1 },
+    { pos: "of book owning kids enjoy reading", posV: 46.6, neg: "of non book owning kids enjoy", negV: 14.8 },
+    {  pos: "of book owning kids read daily", posV: 30.3, neg: "of non book owning kids read daily", negV: 10.3 },
+    {  pos: "of book owning kids", posV: 80.5, neg: "of non book owning kids ", negV: 47.7 },
+    {  pos: "of book owning kids rarely read", posV: 12.6, neg: "of non book owning kids rarely read", negV: 50.5 }
+];
+
+for (var i = 0; i < dataSets.length; i++) {
+    var ds = dataSets[i];
+    PieChart( ds.pos, ds.posV, ds.neg, ds.negV);
+}
