@@ -1,5 +1,3 @@
-var chartTitle = document.getElementById('title');
-
 function PieChart(containerId, title, pos, posV, neg, negV) {
     // Set the dimensions and margins of the graph
     var width = 450,
@@ -25,6 +23,9 @@ function PieChart(containerId, title, pos, posV, neg, negV) {
     var data = {};
     data[pos] = posV;
     data[neg] = negV;
+
+    // Calculate the total value for percentage calculation
+    var total = posV + negV;
 
     // Set the color scale
     var color = d3.scaleOrdinal()
@@ -52,15 +53,51 @@ function PieChart(containerId, title, pos, posV, neg, negV) {
         .append("title") // Add title element for tooltip
         .text(function (d) { return d.data.key + ": " + d.data.value; });
 
-    // Now add the annotation. Use the centroid method to get the best coordinates
+    // Now add the annotation using foreignObject for text wrapping
     svg.selectAll("mySlices")
         .data(data_ready)
         .enter()
-        .append("text")
-        .text(function (d) { return d.data.key; })
-        .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
-        .style("text-anchor", "middle")
-        .style("font-size", 20);
+        .append("foreignObject")
+        .attr("width", 100) // Adjust the width as needed
+        .attr("height", 50) // Adjust the height as needed
+        .attr("transform", function (d) { 
+            var [x, y] = arcGenerator.centroid(d);
+            return "translate(" + (x - 50) + "," + (y - 25) + ")"; // Center the foreignObject
+        })
+        .append("xhtml:div")
+        .style("text-align", "center")
+        .style("font-size", "14px")
+        .style("font-family", "Verdana")
+        .style("background-color", "rgba(255, 255, 255, 0.8)")
+        
+        .text(function (d) {
+            // Calculate percentage
+            var percentage = ((d.data.value / total) * 100).toFixed(1) + "%";
+            return d.data.key + "\n(" + percentage + ")";
+        });
+}
+
+function updateDots() {
+    var dotsContainer = d3.select("#dots");
+    dotsContainer.html(""); // Clear existing dots
+
+    for (var i = 0; i < dataSets.length; i++) {
+        dotsContainer
+            .append("span")
+            .attr("class", "dot")
+            .style("height", "12px")
+            .style("width", "12px")
+            .style("margin", "0 5px")
+            .style("display", "inline-block")
+            .style("border-radius", "50%")
+            .style("background-color", i === currentIndex ? "#5CE1E6" : "#ccc")
+            .on("click", (function(index) {
+                return function() {
+                    currentIndex = index;
+                    displayChart(currentIndex);
+                };
+            })(i));
+    }
 }
 
 // Data sets and titles
@@ -78,15 +115,16 @@ var currentIndex = 0;
 // Function to display a chart based on index
 function displayChart(index) {
     // Clear existing chart
-    d3.select("#clothes").html("");
+    d3.select("#pie").html("");
 
     // Get the current data set
     var ds = dataSets[index];
 
-    
-
     // Draw the chart
-    PieChart("clothes", ds.title, ds.pos, ds.posV, ds.neg, ds.negV);
+    PieChart("pie", ds.title, ds.pos, ds.posV, ds.neg, ds.negV);
+
+    // Update dots
+    updateDots();
 }
 
 // Display the first chart initially
@@ -106,10 +144,3 @@ document.getElementById('next').addEventListener('click', function () {
         displayChart(currentIndex);
     }
 });
-
-
-// var title = ["Book ownership aged 8-18", 'Book ownership and reading enjoyment aged 8-18 2023', 'Book ownership and reading daily aged 8-18 2023', 'Book ownership and describing themselves as confident readers aged 8-18 2023', 'Book ownership and rarely reading 8-18 2023']
-// for (var i = 0; i < title.length; i++) {
-//     var ds = dataSets[i];
-// chartTitle.textContent = ds;
-// }

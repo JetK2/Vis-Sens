@@ -23,7 +23,8 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
   background-color: black;
-  border-color: white;
+  border-color: rgb(0, 251, 243);
+  border-style: ridge;
   padding: 10px;
   cursor: pointer;
   color: #ffffff;
