@@ -9,13 +9,49 @@
     <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
-    <h1 id="title"></h1>
-    <div class="chart-container">
-      <div id="pie" class="chart-wrapper"></div>
-      <div id="dots" style="text-align: center; margin-top: 10px"></div>
-      <button id="prev" class="nav-button">Previous</button>
-      <button id="next" class="nav-button">Next</button>
+    <div class="menu">
+      <a href="https://tobebookfair.org/">
+        <img src="tobebookfair.png" width="125px" />
+      </a>
+      <!-- Navigation bar -->
+      <nav class="link">
+        <a
+          href="https://literacytrust.org.uk/research-services/research-reports/book-ownership-in-2023/"
+          target="_blank"
+          >| Data Source |</a
+        >
+        <a href="https://www.tiktok.com/@tobebookfair.org" target="_blank">
+          Reading Tips for Parents |
+        </a>
+      </nav>
+    </div>
+    <h2 id="title"></h2>
+    <p>
+      The National Literacy Trust collected data from <b>50,376</b> children
+      between the ages of 8-18 in 2023. The report showed the importance of
+      children owning their own books. Also how most children who own books
+      enjoy reading and read daily.
+    </p>
+
+    <div id="line"></div>
+
+    <div id="pie3"></div>
+
+    <div class="container">
+      <div id="carousel1" class="carousel-container">
+        <div id="pie1"></div>
+        <div id="dots1"></div>
+        <button id="prev1">Previous</button>
+        <button id="next1">Next</button>
+      </div>
+      <div id="carousel2" class="carousel-container">
+        <div id="pie2"></div>
+        <div id="dots2"></div>
+        <button id="prev2">Previous</button>
+        <button id="next2">Next</button>
+      </div>
     </div>
     <script src="main.js"></script>
+    <script src="line_graph.js"></script>
   </body>
 </html>

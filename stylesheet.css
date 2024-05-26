@@ -37,3 +37,72 @@ h1 {
 #next {
   right: -100px;
 }
+
+.menu {
+  display: flex;
+}
+
+.link a {
+  text-decoration: none;
+  color: #5ce1e6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+.carousel-container {
+  text-align: center;
+  width: 450px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+.active-dot {
+  background-color: #5ce1e6;
+}
+button {
+  margin: 10px;
+}
+
+#carousel3 {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  width: 450px;
+}
+
+#pie3 {
+  display: flex;
+  position: fixed;
+  top: 25%;
+  left: 60%;
+}
+
+#pie3 .chart-title {
+  position: fixed;
+  top: 20%;
+  left: 54%;
+}
+#line {
+  background-color: #ffffff;
+  display: inline-block;
+  margin-left: 20%;
+  margin-top: 1%;
+}
