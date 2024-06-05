@@ -4,13 +4,13 @@
 
 Table of Contents
 
-1.[Introduction](#introduction)
-2.[User and Data](#user)
-3.[Design](#design)
-4.[Feedback](#feedback)
-5.[Analysis](#analysis)
-6.[Evaluation](#evaluation)
-7.[References](#references)
+1. [Introduction](#introduction)
+2. [User and Data](#user)
+3. [Design](#design)
+4. [Feedback](#feedback)
+5. [Analysis](#analysis)
+6. [Evaluation](#evaluation)
+7. [References](#references)
 
 
 ## introduction
