@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
+var margin = {top: 20, right: 30, bottom: 30, left: 60},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
@@ -52,17 +52,8 @@ svg.append("g")
   )
   
 
-// Add the line
-svg.append("path")
-  .datum(data)
-  .attr("fill", "none")
-  .attr("stroke", "steelblue")
-  .attr("stroke-width", 1.5)
-  .attr("d", d3.line()
-    .x(function(d) { return x(d.date); })
-    .y(function(d) { return y(d.value); })
-  );
 
+  
   // Add X axis label
 svg.append("text")
 .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.bottom) + ")")
@@ -80,7 +71,42 @@ svg.append("text")
 
 svg.append("text")
     .attr("x", (width / 2)) // Position the title at the center horizontally
-    .attr("y", 0 - (margin.top - 13)) // Position the title above the chart, adjust margin.top as needed
+    .attr("y", 0 - (margin.top - 14)) // Position the title above the chart, adjust margin.top as needed
     .attr("text-anchor", "middle")
     .style("font-size", "16px") // Adjust font size as needed
     .text("Book Ownership Trends Over Time"); // Your title text here
+
+    // Add X gridlines
+svg.append("g")
+.attr("class", "grid")
+.attr("transform", "translate(0," + height + ")")
+.call(d3.axisBottom(x)
+  .tickSize(-height)
+  .tickFormat("")
+);
+
+// Add Y gridlines
+svg.append("g")
+.attr("class", "grid")
+.call(d3.axisLeft(y)
+  .ticks((100 - 90) / 1)
+  .tickSize(-width)
+  .tickFormat("")
+);
+
+// CSS for styling gridlines
+svg.selectAll(".grid line")
+.style("stroke", "#ddd")
+.style("stroke-opacity", 0.7)
+.style("shape-rendering", "crispEdges");
+
+// Add the line
+svg.append("path")
+  .datum(data)
+  .attr("fill", "none")
+  .attr("stroke", "steelblue")
+  .attr("stroke-width", 1.5)
+  .attr("d", d3.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.value); })
+  );

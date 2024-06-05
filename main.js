@@ -69,6 +69,7 @@ function createPieChartCarousel(containerId, pieId, dotsId, prevButtonId, nextBu
             .append("xhtml:div")
             .style("text-align", "center")
             .style("font-size", "14px")
+            .style("font-weight", "bold")
             .style("font-family", "Verdana")
             .style("background-color", "rgba(255, 255, 255, 0.8)")
             .style("border-radius", "5%")
@@ -147,10 +148,10 @@ var dataSets2 = [
 ];
 
 var dataSets3 = [
-    { title: "How many children own books in 2023", pos: "own books", posV: 92.9, neg: "don't own books", negV: 7.1 }
+    { title: "How many children own books", pos: "own books", posV: 92.9, neg: "don't own books", negV: 7.1 }
 ];
 
 // Initialize both pie chart carousels
 createPieChartCarousel("carousel1", "pie1", "dots1", "prev1", "next1", dataSets1);
-createPieChartCarousel("carousel2", "pie2", "dots2", "prev2", "next2", dataSets2);
+createPieChartCarousel("carousel2", "pie2", "dots2", "prev1", "next1", dataSets2);
 createPieChartCarousel("carousel3", "pie3", "dots3", "prev3", "next3", dataSets3);

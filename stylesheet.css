@@ -7,6 +7,10 @@ h1 {
   color: #ffffff;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+}
 .chart-container {
   position: relative;
   width: 450px;
@@ -28,14 +32,6 @@ h1 {
   padding: 10px;
   cursor: pointer;
   color: #ffffff;
-}
-
-#prev {
-  left: -100px;
-}
-
-#next {
-  right: -100px;
 }
 
 .menu {
@@ -90,19 +86,40 @@ button {
 
 #pie3 {
   display: flex;
-  position: fixed;
-  top: 25%;
-  left: 60%;
+  position: absolute;
+  top: 50%;
+  left: 58%;
 }
 
 #pie3 .chart-title {
-  position: fixed;
-  top: 20%;
-  left: 54%;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  white-space: nowrap;
 }
 #line {
   background-color: #ffffff;
   display: inline-block;
-  margin-left: 20%;
-  margin-top: 1%;
+  margin-left: 11.5%;
+  margin-top: 2%;
+}
+
+#prev1,
+#next1 {
+  background-color: black;
+  color: #5ce1e6;
+  font-size: large;
+  border-style: solid;
+  border-color: #5ce1e6;
+}
+#prev1 {
+  position: absolute;
+  bottom: -290px;
+  left: 40%;
+}
+
+#next1 {
+  position: absolute;
+  bottom: -290px;
+  left: 55%;
 }
