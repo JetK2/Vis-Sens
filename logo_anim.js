@@ -1,28 +1,30 @@
+// Event listener waits for the HTML page to load before executing code
 document.addEventListener('DOMContentLoaded', () => {
+    // grabs html elements
     const logo = document.querySelector('.logo');
-    const textContainer = document.querySelector('.text-container');
-
+    const aboutContainer = document.querySelector('.about-container');
+    // trigger position for animation
+    const revealThreshold = 100;
+    
+// Scroll Animation to hide and reveal about description 
+// Waits for scroll to be triggered
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
-
-        // Adjust these values based on when you want the effect to trigger
-        const revealThreshold = 100;
         const revealOpacity = 1;
-
+        // When the scroll position goes past the trigger it reveals the description
         if (scrollPosition > revealThreshold) {
-            textContainer.style.opacity = revealOpacity;
-            console.log('hi')
+            aboutContainer.style.opacity = revealOpacity;
+            
         } else {
-            textContainer.style.opacity = 0;
+            aboutContainer.style.opacity = 0;
         }
     });
 
-    // Animation for logo
-    const revealThreshold = 100; // Adjust threshold if needed
+// Scroll Animation to slide image to the left 
 
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
-
+ // When the scroll position goes past the trigger it slides image
         if (scrollPosition > revealThreshold) {
             logo.style.transform = 'translateX(-300%)';
         } else {

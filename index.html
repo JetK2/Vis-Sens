@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data</title>
+    <title>Children's Book Ownership 2023 Data</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="stylesheet.css" />
+    <!-- D2.JS -->
     <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
+    <!-- Navigation bar -->
     <div class="menu">
-      <!-- Navigation bar -->
       <nav class="link">
         <a href="https://tobebookfair.org/" target="_blank">| ToBeBookFair</a>
         <a
@@ -22,13 +24,21 @@
         >
       </nav>
     </div>
+    <!-- Logo -->
+    <!-- Alt text for screen readers -->
     <div class="image-container">
       <a href="https://tobebookfair.org/">
-        <img src="tobebookfair.png" class="logo" width="20%" />
+        <img
+          src="tobebookfair.png"
+          class="logo"
+          alt="white text. Blue, green, yellow, pink books around the edges of the text"
+          width="20%"
+        />
       </a>
     </div>
-    <div class="text-container">
-      <p class="hidden-text">
+    <!-- Business About Text -->
+    <div class="about-container">
+      <p class="about">
         ToBeBookFair is a little social enterprise aiming to make big changes to
         children’s reading. We genuinely care about promoting reading for
         pleasure and the love for books. Think of us as the little independent
@@ -41,6 +51,7 @@
         donate the difference to help us help kids.
       </p>
     </div>
+    <!-- Data Explanation -->
     <div class="data-text">
       <h2>How Important is it for children to own books?</h2>
       <p>
@@ -57,24 +68,30 @@
         This data does't prove that owning books is not worth it.
       </p>
     </div>
-
+    <!-- Book Ownership Line Graph -->
+    <!-- I picked a line graph because I wanted the viewer to quickly see the changes in book ownership over the years -->
     <div id="line"></div>
+    <!-- Book Ownership Pie Chart 2023 -->
+    <!-- I picked a pie chart for 2023 because I wanted the viewer to see the exact value for last year -->
     <div id="pie3">
-      <div class="chart-title">Chart Title</div>
+      <div class="chart-title"></div>
     </div>
-
-    <div class="container">
+    <!-- Pie Chart Carousel -->
+    <div class="piechart-container">
+      <!-- Don't Own Books -->
       <div id="carousel1" class="carousel-container">
         <div id="pie1"></div>
         <div id="dots1"></div>
         <button id="prev1">Previous</button>
         <button id="next1">Next</button>
       </div>
+      <!-- Own Books -->
       <div id="carousel2" class="carousel-container">
         <div id="pie2"></div>
         <div id="dots2"></div>
       </div>
     </div>
+    <!-- Javascript files -->
     <script src="main.js"></script>
     <script src="line_graph.js"></script>
     <script src="logo_anim.js"></script>

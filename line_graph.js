@@ -1,9 +1,9 @@
-// set the dimensions and margins of the graph
+// Dimensions for Line Graph
 var margin = {top: 20, right: 30, bottom: 30, left: 60},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
+// Selects HTML element to append.
 var svg = d3.select("#line")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -11,7 +11,7 @@ var svg = d3.select("#line")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// Read the data
+// Book Ownership Data from 2013-2023
 var data = [
   { date: "2013", value: 91.0 },
   { date: "2014", value: 90.4 },
@@ -26,13 +26,12 @@ var data = [
   { date: "2023", value: 92.9 }
 ];
 
-// Format the data
+// Formats the data into Years if not the years would look like .013 .014 and so on
 data.forEach(function(d) {
   d.date = d3.timeParse("%Y")(d.date);
-  d.value = +d.value;
 });
 
-// Add X axis --> it is a date format
+// Add X axis in Date Format (referenced https://d3-graph-gallery.com/graph/line_basic.html)
 var x = d3.scaleTime()
   .domain(d3.extent(data, function(d) { return d.date; }))
   .range([0, width]);
@@ -40,27 +39,24 @@ svg.append("g")
   .attr("transform", "translate(0," + height + ")")
   .call(d3.axisBottom(x))
 
-// Add Y axis
+// Add Y axis scale from 90 to 95
 var y = d3.scaleLinear()
   .domain([90, 95])
   .range([height, 0]);
 
 svg.append("g")
   .call(d3.axisLeft(y)
-    .ticks((100 - 90) / 1) // Number of ticks to get 0.1 increments
-    .tickFormat(d3.format(".1f")) // Format the ticks to one decimal place
+  // axis ticks in increments of 1
+    .ticks((100 - 90) / 1) 
   )
   
-
-
-  
-  // Add X axis label
+// X axis label
 svg.append("text")
 .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.bottom) + ")")
 .style("text-anchor", "middle")
 .text("Year");
 
-// Add Y axis label
+// Y axis label
 svg.append("text")
 .attr("transform", "rotate(-90)")
 .attr("y", 0 - margin.left)
@@ -69,14 +65,16 @@ svg.append("text")
 .style("text-anchor", "middle")
 .text("Ownership (%)");
 
+// Graph Title
 svg.append("text")
-    .attr("x", (width / 2)) // Position the title at the center horizontally
-    .attr("y", 0 - (margin.top - 14)) // Position the title above the chart, adjust margin.top as needed
+    .attr("x", (width / 2)) 
+    .attr("y", 0 - (margin.top - 14)) 
     .attr("text-anchor", "middle")
-    .style("font-size", "16px") // Adjust font size as needed
-    .text("Book Ownership Trends Over Time"); // Your title text here
+    .style("font-size", "16px") 
+    .text("Book Ownership Trends Over Time");
 
-    // Add X gridlines
+// Gridlines to make it easier to the value for each year
+// X gridlines  
 svg.append("g")
 .attr("class", "grid")
 .attr("transform", "translate(0," + height + ")")
@@ -94,13 +92,13 @@ svg.append("g")
   .tickFormat("")
 );
 
-// CSS for styling gridlines
+// CSS for gridlines
 svg.selectAll(".grid line")
 .style("stroke", "#ddd")
 .style("stroke-opacity", 0.7)
 .style("shape-rendering", "crispEdges");
 
-// Add the line
+// The Line
 svg.append("path")
   .datum(data)
   .attr("fill", "none")
