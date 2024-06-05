@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data</title>
     <link rel="stylesheet" href="stylesheet.css" />
@@ -12,21 +11,22 @@
     <div class="menu">
       <!-- Navigation bar -->
       <nav class="link">
+        <a href="https://tobebookfair.org/" target="_blank">| ToBeBookFair</a>
         <a
           href="https://literacytrust.org.uk/research-services/research-reports/book-ownership-in-2023/"
           target="_blank"
           >| Data Source |</a
         >
-        <a href="https://www.tiktok.com/@tobebookfair.org" target="_blank">
-          Reading Tips for Parents |
-        </a>
+        <a href="https://www.tiktok.com/@tobebookfair.org" target="_blank"
+          >Reading Tips for Parents |</a
+        >
       </nav>
     </div>
-    <a href="https://tobebookfair.org/">
-      <div class="logo">
-        <img src="tobebookfair.png" width="20%" />
-      </div>
-    </a>
+    <div class="image-container">
+      <a href="https://tobebookfair.org/">
+        <img src="tobebookfair.png" class="logo" width="20%" />
+      </a>
+    </div>
     <div class="text-container">
       <p class="hidden-text">
         ToBeBookFair is a little social enterprise aiming to make big changes to
@@ -41,17 +41,16 @@
         donate the difference to help us help kids.
       </p>
     </div>
-    <p>
-      The National Literacy Trust collected data from <b>50,376</b> children
-      between the ages of 8-18 in 2023. The report showed the importance of
-      children owning their own books. Also how most children who own books
-      enjoy reading and read daily.
-    </p>
-
+    <div class="data-text">
+      <p>
+        The National Literacy Trust collected data from <b>50,376</b> children
+        between the ages of 8-18 in 2023. The report showed the importance of
+        children owning their own books. Also how most children who own books
+        enjoy reading and read daily.
+      </p>
+    </div>
     <div id="line"></div>
-
     <div id="pie3"></div>
-
     <div class="container">
       <div id="carousel1" class="carousel-container">
         <div id="pie1"></div>
@@ -66,5 +65,6 @@
     </div>
     <script src="main.js"></script>
     <script src="line_graph.js"></script>
+    <script src="logo_anim.js"></script>
   </body>
 </html>

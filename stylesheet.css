@@ -1,16 +1,59 @@
 html {
   background-color: black;
 }
-h1 {
+
+body,
+html {
+  margin: 0;
+  padding-top: 50px; /* Adjust padding as needed */
+  height: 100%;
+
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
   text-align: center;
   color: #ffffff;
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
+.data-text {
+  position: relative;
+  top: -28%;
 }
+
+img {
+  z-index: 2;
+}
+
+.logo {
+  transition: transform 1s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-container {
+  position: relative;
+  top: -18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust width as needed */
+  height: auto;
+  z-index: 1;
+  opacity: 0; /* Start with opacity 0 */
+  transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: left; /* Align text to the left */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+
+.hidden-text {
+  color: #ffffff; /* Ensure text is visible against the background */
+}
+
+.reveal .logo {
+  transform: translateX(-300%);
+}
+
 .chart-container {
   position: relative;
   width: 450px;
@@ -23,7 +66,7 @@ h1 {
 }
 
 .nav-button {
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
   background-color: black;
@@ -36,16 +79,16 @@ h1 {
 
 .menu {
   display: flex;
+  position: relative;
+  top: -10%;
 }
 
 .link a {
   text-decoration: none;
   color: #5ce1e6;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #ffffff;
   padding-left: 200px;
   padding-right: 200px;
@@ -56,11 +99,15 @@ p {
   justify-content: space-around;
   align-items: flex-start;
   margin-top: 20px;
+  position: relative;
+  top: -70%;
 }
+
 .carousel-container {
   text-align: center;
   width: 450px;
 }
+
 .dot {
   height: 12px;
   width: 12px;
@@ -69,9 +116,11 @@ p {
   border-radius: 50%;
   background-color: #ccc;
 }
+
 .active-dot {
   background-color: #5ce1e6;
 }
+
 button {
   margin: 10px;
 }
@@ -86,22 +135,24 @@ button {
 
 #pie3 {
   display: flex;
-  position: absolute;
-  top: 50%;
-  left: 58%;
+  position: relative;
+  top: -66%;
+  left: 18%;
 }
 
 #pie3 .chart-title {
-  position: absolute;
-  top: -10%;
-  left: -10%;
+  position: relative;
+  top: -40px;
+  left: 36%;
   white-space: nowrap;
 }
+
 #line {
   background-color: #ffffff;
   display: inline-block;
   margin-left: 11.5%;
-  margin-top: 2%;
+  position: relative;
+  top: -16%;
 }
 
 #prev1,
@@ -111,15 +162,18 @@ button {
   font-size: large;
   border-style: solid;
   border-color: #5ce1e6;
+  position: relative;
+  top: -160%;
 }
+
 #prev1 {
-  position: absolute;
-  bottom: -290px;
-  left: 40%;
+  position: relative;
+
+  left: 64%;
 }
 
 #next1 {
-  position: absolute;
-  bottom: -290px;
-  left: 55%;
+  position: relative;
+
+  left: 85%;
 }
