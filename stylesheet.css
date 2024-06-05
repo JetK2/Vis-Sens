@@ -7,7 +7,6 @@ html {
   margin: 0;
   padding-top: 50px; /* Adjust padding as needed */
   height: 100%;
-
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -16,9 +15,14 @@ h1 {
   color: #ffffff;
 }
 
+h2 {
+  text-align: center;
+  color: #ffffff;
+}
+
 .data-text {
   position: relative;
-  top: -28%;
+  top: -18%;
 }
 
 img {
@@ -67,6 +71,7 @@ img {
 
 .nav-button {
   position: relative;
+
   top: 50%;
   transform: translateY(-50%);
   background-color: black;
@@ -80,11 +85,13 @@ img {
 .menu {
   display: flex;
   position: relative;
+
   top: -10%;
 }
 
 .link a {
   text-decoration: none;
+
   color: #5ce1e6;
 }
 
@@ -100,7 +107,7 @@ p {
   align-items: flex-start;
   margin-top: 20px;
   position: relative;
-  top: -70%;
+  top: -30%;
 }
 
 .carousel-container {
@@ -134,16 +141,16 @@ button {
 }
 
 #pie3 {
-  display: flex;
+  display: inline-block;
   position: relative;
-  top: -66%;
-  left: 18%;
+  top: -25%;
+  left: 23%;
 }
 
 #pie3 .chart-title {
   position: relative;
-  top: -40px;
-  left: 36%;
+  top: 50px;
+  left: -11%;
   white-space: nowrap;
 }
 
@@ -152,7 +159,7 @@ button {
   display: inline-block;
   margin-left: 11.5%;
   position: relative;
-  top: -16%;
+  top: -30%;
 }
 
 #prev1,
@@ -168,12 +175,10 @@ button {
 
 #prev1 {
   position: relative;
-
-  left: 64%;
+  left: 74%;
 }
 
 #next1 {
   position: relative;
-
-  left: 85%;
+  left: 100%;
 }
