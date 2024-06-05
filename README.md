@@ -9,6 +9,8 @@ Table of Contents
 3.[Design](#design)
 4.[Feedback](#feedback)
 5.[Analysis](#analysis)
+6.[Evaluation](#evaluation)
+7.[References](#references)
 
 
 ## introduction
@@ -24,4 +26,21 @@ Table of Contents
 ![7](https://github.com/JetK2/Vis-Sens/assets/99844087/c8bb3306-72ed-4cff-8ac8-038ef85ec00e)
 ![8](https://github.com/JetK2/Vis-Sens/assets/99844087/e20045cd-87d4-4b4c-9f40-4289038ec701)
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+# [Link to Code. Code hase been completely commented and includes references](https://github.com/JetK2/Vis-Sens)
+
+## evaluation
+
+I think the data visulation is clearer than how the original data was presented. At a glance the viewer is able to understand the data but also see how they can then go forth with this new information(Buy books or look at how to encourage children to read). However I still think the data is overwhelming and can be mixed up. A way to improve this could be to create a short animation so the viewer doesn't have to navigate anything and the visualisations can be more easily explained.
+
+
+I struggled with working with d3.js and html. The positioning of each element is not perfect for every display as I set the positions in css. 
+
+## references
+
+https://tobebookfair.org/
+https://literacytrust.org.uk/research-services/research-reports/book-ownership-in-2023/
+https://observablehq.com/@d3/pie-chart-update?intent=fork
+https://observablehq.com/@d3/zoomable-circle-packing?intent=fork
+https://d3-graph-gallery.com/pie.html
+https://d3-graph-gallery.com/graph/line_basic.html
+https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet#lines
